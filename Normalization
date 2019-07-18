@@ -1,0 +1,7 @@
+import numpy as np 
+random_list = np.random.random(10)
+print("List of 10 numbers:",random_list)
+sum_of_values = random_list.sum()
+print("Sum of 10 numbers:",sum_of_values)
+normalized_value = random_list/sum_of_values
+print(normalized_value.sum())
