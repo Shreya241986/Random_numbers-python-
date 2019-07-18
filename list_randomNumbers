@@ -1,0 +1,16 @@
+from random import random
+from random import SystemRandom
+
+def random_list(n,secure = True):
+  random_floats = []
+  if secure:
+    crypto = SystemRandom()
+    random_float = crypto.random
+  else:
+    random_float = random
+
+  for _ in range(n):
+    random_floats.append(random_float())
+  return random_floats
+
+print(random_list(10, secure = False))        
