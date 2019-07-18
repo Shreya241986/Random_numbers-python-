@@ -14,3 +14,13 @@ def random_list(n,secure = True):
   return random_floats
 
 print(random_list(10, secure = False))        
+"""
+Alternatively, you can use a list comprehension to create a list of random float numbers:
+
+%%timeit
+[crypto.random() for _ in range(100)]
+"""
+
+"""The fastest and most effecient way is to use numpy module"""
+
+print(np.random.random(10))
