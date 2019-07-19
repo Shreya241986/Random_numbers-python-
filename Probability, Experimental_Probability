@@ -1,0 +1,46 @@
+import random
+import numpy as np
+import collections
+"""The rolling of a die"""
+outcome = random.randint(1,6)
+print(outcome)
+probability = 1/6
+print("probability= ",probability)
+
+"""Experimental Probability"""
+#recording 10 times
+outcomes = []
+for _ in range(10):
+  outcomes.append(random.randint(1,6)) 
+print(outcomes)
+#P(A) = successful trials/total trials
+for i in range(1,7):
+  a = outcomes.count(i)
+  P_a = a/10
+  print(f"P({i})=",P_a)
+
+
+#Using numpy
+outcome = np.random.randint(1, 7, size=10)
+print(outcome)
+#P(A) = successful trials/total trials
+number, counts = np.unique(outcome,return_counts=True)
+print(f"P({number}) = ",counts/10)
+"""#zipping into dictionary
+dt = dict(zip(number,counts))
+print("counts:",dt)"""
+
+#Using Collections and numpy
+print("Using Collections")
+#here the output will be printed according to highest counts
+print(collections.Counter(outcome))
+
+#Alternative
+for i in range(1,7):
+  print(f"{i} = ",(outcome == i).sum())
+#and so on we would calculate the probability
+
+"""Note we can use count on nd array like this"""
+print("demonstrating count when outcome = 1")
+a = np.count_nonzero(outcome == 1)
+print(a)
