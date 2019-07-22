@@ -1,1 +1,4 @@
-
+#In the following example we produce six numbers out of the range from 1 to 49 (inclusive). 
+#This corresponds to a drawing of the German lottery:
+import random
+print(random.sample(range(1,50),6))
