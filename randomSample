@@ -1,0 +1,17 @@
+"""The module numpy.random contains a function random_sample, which returns random floats in the half open interval [0.0, 1.0). The results are from the "continuous uniform" distribution over the stated interval. This function takes just one parameter "size", which defines the output shape. If we set size to (3, 4) e.g., we will get an array with the shape (3, 4) filled with random elements:"""
+from numpy import random as np
+x = np.random_sample((3,4))
+print(x)
+
+#The below ys values are same will create 1D array
+y = np.random_sample(7)
+print("y:",y)
+#OR
+y =  np.random_sample((7,))
+print("y:",y)
+
+#you can also generate arrays with values from an arbitrary interval[a,b) where a has to be less than b
+a = -3.4
+b = 5.9
+A = (b-a) * np.random_sample((3,4)) + a
+print(A)
